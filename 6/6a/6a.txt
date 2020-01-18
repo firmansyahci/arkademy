@@ -1,0 +1,23 @@
+CREATE TABLE product(
+id int NOT NULL AUTO_INCREMENT,
+name varchar(50),
+price int,
+id_category int,
+id_cashier int,
+PRIMARY KEY (id));
+
+CREATE TABLE category(
+id int NOT NULL AUTO_INCREMENT,
+name varchar(50),
+PRIMARY KEY (id));
+
+CREATE TABLE cashier(
+id int NOT NULL AUTO_INCREMENT,
+name varchar(50),
+PRIMARY KEY (id));
+
+SELECT * FROM product;
+SELECT * FROM category;
+SELECT * FROM cashier;
+
+SELECT cashier.name as cashier, product.name as product, category.name as category, Product.price as price FROM Product LEFT JOIN category ON product.id_category = category.id LEFT JOIN cashier ON product.id_cashier = cashier.id
